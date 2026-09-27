@@ -34,16 +34,16 @@ public class BossMovement : MonoBehaviour
         }
         transform.Translate(transform.up * speed * Time.deltaTime);
 
-        if (transform.position.y > 4 && goingUp == true)
-        {
-            goingUp = false;
-            speed *= -1;
-        }
-
-        if (transform.position.y < -4 && goingUp == false)
+        if (transform.position.y > 4 && goingUp == false)
         {
             goingUp = true;
-            speed *= -1;
+            speed *= -1;  
+        }
+
+        if (transform.position.y < -4 && goingUp == true)
+        {
+            goingUp = false;
+            speed *= -1; 
         }
     }
 }
