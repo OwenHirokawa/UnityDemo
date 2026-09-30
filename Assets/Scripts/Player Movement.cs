@@ -19,7 +19,22 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -4f, 4f), transform.position.z);
+    
+  
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(transform.right * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(-transform.right * speed * Time.deltaTime);
+        }
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7,0),transform.position.y, transform.position.z);
     }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
