@@ -38,4 +38,5 @@ public class SeekingShip : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
